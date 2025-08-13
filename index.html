@@ -511,7 +511,8 @@
         }
         
         /* --- Styling Halaman TikTok Downloader --- */
-        .tiktok-downloader {
+        .tiktok-downloader,
+        .pinterest-downloader {
             max-width: 600px;
             margin: 2rem auto;
             background-color: var(--card-bg);
@@ -522,20 +523,23 @@
             text-align: center;
         }
         
-        .tiktok-downloader h1 {
+        .tiktok-downloader h1,
+        .pinterest-downloader h1 {
             color: var(--neon-cyan);
             text-shadow: 0 0 10px var(--neon-shadow);
             margin-bottom: 1rem;
         }
         
-        .tiktok-downloader .input-group {
+        .tiktok-downloader .input-group,
+        .pinterest-downloader .input-group {
             display: flex;
             flex-direction: column;
             gap: 1rem;
             margin-bottom: 2rem;
         }
         
-        .tiktok-downloader .input-group input {
+        .tiktok-downloader .input-group input,
+        .pinterest-downloader .input-group input {
             width: 100%;
             padding: 0.75rem;
             border-radius: 0.5rem;
@@ -546,7 +550,8 @@
             box-shadow: 0 0 5px var(--neon-shadow);
         }
         
-        .tiktok-downloader .input-group button {
+        .tiktok-downloader .input-group button,
+        .pinterest-downloader .input-group button {
             width: 100%;
             padding: 0.75rem 1.5rem;
             border: none;
@@ -558,12 +563,14 @@
             transition: all 0.3s ease;
         }
         
-        .tiktok-downloader .input-group button:hover {
+        .tiktok-downloader .input-group button:hover,
+        .pinterest-downloader .input-group button:hover {
             background-color: #00b8d4;
             box-shadow: 0 0 15px var(--neon-shadow);
         }
         
-        .tiktok-downloader #resultArea {
+        .tiktok-downloader #resultArea,
+        .pinterest-downloader #resultArea {
             display: none;
             flex-direction: column;
             gap: 1.5rem;
@@ -571,7 +578,8 @@
             text-align: left;
         }
         
-        .tiktok-downloader #resultArea .video-info {
+        .tiktok-downloader #resultArea .video-info,
+        .pinterest-downloader #resultArea .video-info {
             background-color: var(--light-card-bg);
             padding: 1.5rem;
             border-radius: 10px;
@@ -579,53 +587,47 @@
             box-shadow: 0 0 10px var(--neon-shadow);
         }
 
-        .tiktok-downloader #resultArea .video-info h3 {
+        .tiktok-downloader #resultArea .video-info h3,
+        .pinterest-downloader #resultArea .video-info h3 {
             color: var(--neon-cyan);
             margin-top: 0;
             text-shadow: 0 0 5px var(--neon-shadow);
         }
         
-        .tiktok-downloader #resultArea .video-info p {
+        .tiktok-downloader #resultArea .video-info p,
+        .pinterest-downloader #resultArea .video-info p {
             margin: 0.5rem 0;
         }
         
-        .tiktok-downloader #resultArea .download-links {
+        .tiktok-downloader #resultArea .download-links,
+        .pinterest-downloader #resultArea .download-links {
             display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
+            /* === FIX DI SINI: MENGUBAH ARAH TAMPILAN === */
+            flex-direction: column;
+            /* flex-wrap: wrap; Dihapus karena tidak diperlukan lagi */
             justify-content: center;
             gap: 1rem;
             margin-top: 1rem;
         }
         
-        .tiktok-downloader #resultArea .download-links a,
-        .tiktok-downloader #resultArea .download-links button {
-            display: block;
-            padding: 0.75rem;
-            text-align: center;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            flex-grow: 1;
-            border: none;
-            outline: none;
-        }
-        
+        /* Tambahan untuk responsifitas, agar tombol tetap terlihat rapi */
         @media (max-width: 480px) {
             .tiktok-downloader #resultArea .download-links a,
-            .tiktok-downloader #resultArea .download-links button {
+            .pinterest-downloader #resultArea .download-links a,
+            .tiktok-downloader #resultArea .download-links button,
+            .pinterest-downloader #resultArea .download-links button {
                 flex-basis: 100%;
             }
         }
         
-        .tiktok-downloader #resultArea .download-links .btn-video-nowm {
+        .tiktok-downloader #resultArea .download-links .btn-video-nowm,
+        .pinterest-downloader #resultArea .download-links .btn-video-nowm {
             background-color: var(--neon-cyan);
             color: var(--btn-text);
         }
         
-        .tiktok-downloader #resultArea .download-links .btn-video-nowm:hover {
+        .tiktok-downloader #resultArea .download-links .btn-video-nowm:hover,
+        .pinterest-downloader #resultArea .download-links .btn-video-nowm:hover {
             background-color: #00b8d4;
         }
         
@@ -1055,47 +1057,6 @@
             justify-content: center;
         }
         
-        /* --- Gaya Khusus All Sosmed Downloader --- */
-        .all-sosmed-downloader .result-box {
-            background-color: var(--light-card-bg);
-            padding: 1.5rem;
-            border-radius: 10px;
-            border: 1px solid var(--neon-cyan);
-            margin-top: 1rem;
-            text-align: left;
-        }
-
-        .all-sosmed-downloader .result-box h4 {
-            color: var(--neon-cyan);
-            margin-top: 0;
-            margin-bottom: 1rem;
-        }
-
-        .all-sosmed-downloader .media-display {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-        
-        .all-sosmed-downloader .media-display img,
-        .all-sosmed-downloader .media-display video {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            display: block;
-        }
-
-        .all-sosmed-downloader .media-display a {
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            background-color: var(--neon-cyan);
-            color: var(--btn-text);
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            text-align: center;
-        }
-
         /* --- CSS BARU UNTUK BERANDA --- */
         .stats-container {
             display: grid;
@@ -1210,7 +1171,6 @@
         <a href="#alight-motion-preset" class="menu-item"><span class="icon fas fa-film"></span>Preset Alight Motion</a>
         <a href="#tiktok-downloader" class="menu-item"><span class="icon fab fa-tiktok"></span>TikTok Downloader</a>
         <a href="#pinterest-downloader" class="menu-item"><span class="icon fab fa-pinterest"></span>Pinterest Downloader</a>
-        <a href="#all-sosmed-downloader" class="menu-item"><span class="icon fas fa-download"></span>All Sosmed Downloader</a>
         <a href="#media-to-url" class="menu-item"><span class="icon fas fa-link"></span>Media to URL</a>
         <a href="#history" class="menu-item"><span class="icon fas fa-history"></span>Riwayat</a>
     </div>
@@ -1357,7 +1317,7 @@
                     <button id="downloadTiktokBtn">Download</button>
                 </div>
 
-                <div id="resultArea">
+                <div id="resultAreaTiktok">
                     <video id="tiktokVideoPlayer" controls style="width: 100%; max-width: 400px; border-radius: 10px; margin: 0 auto; display: block;"></video>
                     
                     <div class="video-info">
@@ -1398,47 +1358,28 @@
                     <input type="text" id="pinterestUrlInput" placeholder="Masukkan link video atau gambar Pinterest..." autocomplete="off">
                     <button id="downloadPinterestBtn">Download</button>
                 </div>
-
-                <div id="pinterestResultArea" style="display: none; flex-direction: column; gap: 1.5rem; margin-top: 2rem; text-align: left;">
+                
+                <div id="resultAreaPinterest">
                     <div class="media-container" style="text-align: center;">
-                        </div>
-                    <div class="video-info" style="background-color: var(--light-card-bg); padding: 1.5rem; border-radius: 10px; border: 1px solid var(--neon-cyan); box-shadow: 0 0 10px var(--neon-shadow);">
+                        <img id="pinterestMediaImg" style="width: 100%; max-width: 400px; border-radius: 10px; margin: 0 auto; display: block;">
+                        <video id="pinterestMediaVideo" controls style="width: 100%; max-width: 400px; border-radius: 10px; margin: 0 auto; display: block;"></video>
+                    </div>
+                    
+                    <div class="video-info">
                         <h3>Informasi Konten</h3>
                         <p><strong>Judul:</strong> <span id="pinterestTitle"></span></p>
                     </div>
-                    <div class="download-links" style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 1rem;">
-                        <a id="btnDownloadPinterest" class="download-btn" href="#" target="_blank">
+                    
+                    <div class="download-links">
+                        <a id="btnDownloadPinterest" class="download-btn btn-video-nowm" href="#" download target="_blank">
                             Download <span id="downloadType"></span>
                         </a>
                     </div>
                 </div>
+
                 <div id="pinterestStatusMessage" class="status-message"></div>
             </div>
         </div>
-        
-        <div id="all-sosmed-downloader" class="content-section">
-            <div class="all-sosmed-downloader">
-                <h1>All Sosmed Downloader</h1>
-                <p>Download konten dari berbagai platform media sosial.</p>
-                <div class="input-group">
-                    <input type="text" id="allSosmedUrlInput" placeholder="Masukkan link sosmed..." autocomplete="off">
-                    <button id="downloadAllSosmedBtn">Download</button>
-                </div>
-
-                <div id="allSosmedResultArea" style="display: none;">
-                    <div class="result-box">
-                        <h4>Hasil Download</h4>
-                        <div id="allSosmedMediaDisplay" class="media-display">
-                            </div>
-                        <div class="download-links" style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                            </div>
-                    </div>
-                </div>
-
-                <div id="allSosmedStatusMessage" class="status-message"></div>
-            </div>
-        </div>
-        
         <div id="media-to-url" class="content-section">
             <div class="media-uploader">
                 <h1>Media to URL</h1>
@@ -1481,7 +1422,7 @@
     <script>
         // GANTI DENGAN IP LOKAL TERMUX-MU JIKA INGIN DIAKSES DARI JARINGAN LAIN
         // DAN PASTIKAN PORT-NYA SAMA DENGAN SERVER PYTHON.
-        const CUSTOM_API_URL = 'https://webrofik.vercel.app';
+        const CUSTOM_API_URL = 'https://abcdp-kappa.vercel.app';
 
         let lastTiktokVideoUrl = '';
         
@@ -1607,7 +1548,7 @@
         // --- LOGIKA TIKTOK DOWNLOADER ---
         const downloadTiktokBtn = document.getElementById('downloadTiktokBtn');
         const tiktokUrlInput = document.getElementById('tiktokUrlInput');
-        const tiktokResultArea = document.getElementById('resultArea');
+        const tiktokResultArea = document.getElementById('resultAreaTiktok');
         const tiktokVideoPlayer = document.getElementById('tiktokVideoPlayer');
         const tiktokVideoTitle = document.getElementById('videoTitle');
         const tiktokVideoAuthor = document.getElementById('videoAuthor');
@@ -1704,9 +1645,10 @@
         // --- LOGIKA PINTEREST DOWNLOADER (BARU) ---
         const downloadPinterestBtn = document.getElementById('downloadPinterestBtn');
         const pinterestUrlInput = document.getElementById('pinterestUrlInput');
-        const pinterestResultArea = document.getElementById('pinterestResultArea');
-        const pinterestMediaContainer = pinterestResultArea.querySelector('.media-container');
+        const pinterestResultArea = document.getElementById('resultAreaPinterest');
         const pinterestTitle = document.getElementById('pinterestTitle');
+        const pinterestMediaImg = document.getElementById('pinterestMediaImg');
+        const pinterestMediaVideo = document.getElementById('pinterestMediaVideo');
         const btnDownloadPinterest = document.getElementById('btnDownloadPinterest');
         const downloadTypeSpan = document.getElementById('downloadType');
         const pinterestStatusMessage = document.getElementById('pinterestStatusMessage');
@@ -1727,7 +1669,8 @@
                 pinterestResultArea.style.display = 'none';
                 
                 // Clear previous media
-                pinterestMediaContainer.innerHTML = '';
+                pinterestMediaImg.style.display = 'none';
+                pinterestMediaVideo.style.display = 'none';
     
                 try {
                     const response = await fetch(`${CUSTOM_API_URL}/api/download-pinterest?url=${encodeURIComponent(url)}`);
@@ -1739,21 +1682,19 @@
                         pinterestResultArea.style.display = 'flex';
                         pinterestTitle.innerText = pinterestData.title || 'Tidak ada judul';
     
-                        let mediaElement;
                         if (data.type === 'video') {
-                            mediaElement = document.createElement('video');
-                            mediaElement.src = pinterestData.url;
-                            mediaElement.controls = true;
-                            mediaElement.setAttribute('poster', pinterestData.thumbnail);
+                            pinterestMediaVideo.src = pinterestData.url;
+                            pinterestMediaVideo.controls = true;
+                            pinterestMediaVideo.setAttribute('poster', pinterestData.thumbnail);
+                            pinterestMediaVideo.style.display = 'block';
                             downloadTypeSpan.innerText = 'Video';
                         } else {
-                            mediaElement = document.createElement('img');
-                            mediaElement.src = pinterestData.url;
-                            mediaElement.alt = pinterestData.title || 'Pinterest Image';
+                            pinterestMediaImg.src = pinterestData.url;
+                            pinterestMediaImg.alt = pinterestData.title || 'Pinterest Image';
+                            pinterestMediaImg.style.display = 'block';
                             downloadTypeSpan.innerText = 'Gambar';
                         }
                         
-                        pinterestMediaContainer.appendChild(mediaElement);
                         btnDownloadPinterest.href = pinterestData.url;
                         btnDownloadPinterest.setAttribute('download', true);
     
@@ -1784,89 +1725,6 @@
             });
         }
         
-        // --- LOGIKA ALL SOSMED DOWNLOADER ---
-        const downloadAllSosmedBtn = document.getElementById('downloadAllSosmedBtn');
-        const allSosmedUrlInput = document.getElementById('allSosmedUrlInput');
-        const allSosmedResultArea = document.getElementById('allSosmedResultArea');
-        const allSosmedMediaDisplay = document.getElementById('allSosmedMediaDisplay');
-        const allSosmedDownloadLinks = allSosmedResultArea.querySelector('.download-links');
-        const allSosmedStatusMessage = document.getElementById('allSosmedStatusMessage');
-
-        if (downloadAllSosmedBtn) {
-            downloadAllSosmedBtn.addEventListener('click', async () => {
-                const url = allSosmedUrlInput.value.trim();
-                if (!url) {
-                    alert('Silakan masukkan URL sosmed.');
-                    return;
-                }
-
-                allSosmedStatusMessage.style.display = 'block';
-                allSosmedStatusMessage.style.backgroundColor = 'rgba(0, 255, 242, 0.2)';
-                allSosmedStatusMessage.style.color = 'var(--neon-cyan)';
-                allSosmedStatusMessage.innerText = 'Sedang memproses, mohon tunggu...';
-                downloadAllSosmedBtn.disabled = true;
-                allSosmedResultArea.style.display = 'none';
-                allSosmedMediaDisplay.innerHTML = '';
-                allSosmedDownloadLinks.innerHTML = '';
-
-                try {
-                    const response = await fetch(`${CUSTOM_API_URL}/api/download-all-sosmed?url=${encodeURIComponent(url)}`);
-                    const data = await response.json();
-
-                    if (response.ok && data.status === 'success' && data.data) {
-                        allSosmedResultArea.style.display = 'block';
-                        allSosmedStatusMessage.style.display = 'none';
-                        const resultData = data.data;
-
-                        // Display media (video or image)
-                        if (resultData.thumbnail) {
-                            if (resultData.url && resultData.url.endsWith('.mp4')) {
-                                allSosmedMediaDisplay.innerHTML += `<video controls src="${resultData.url}" poster="${resultData.thumbnail}"></video>`;
-                            } else {
-                                allSosmedMediaDisplay.innerHTML += `<img src="${resultData.thumbnail}" alt="Thumbnail">`;
-                            }
-                        }
-
-                        // Display download links
-                        if (resultData.url) {
-                            allSosmedDownloadLinks.innerHTML += `<a href="${resultData.url}" download class="download-btn">Download Media</a>`;
-                        } else if (resultData.audio) {
-                             allSosmedDownloadLinks.innerHTML += `<a href="${resultData.audio}" download class="download-btn">Download Audio</a>`;
-                        }
-                        
-                        // Handle multiple files if available
-                        if (resultData.urls && Array.isArray(resultData.urls)) {
-                            resultData.urls.forEach((item, index) => {
-                                allSosmedDownloadLinks.innerHTML += `<a href="${item.url}" download class="download-btn">Download Media ${index + 1} (${item.quality})</a>`;
-                            });
-                        }
-                        
-                        if (resultData.music) {
-                            allSosmedDownloadLinks.innerHTML += `<a href="${resultData.music}" download class="download-btn" style="background-color: #e91e63; color: white;">Download Music</a>`;
-                        }
-                        
-                        // Simpan ke riwayat
-                        saveToHistory({
-                            type: 'all-sosmed',
-                            title: resultData.title || `Konten dari ${new URL(url).hostname}`,
-                            url: resultData.url || resultData.urls[0]?.url || 'Tidak ada URL utama'
-                        });
-
-                    } else {
-                        allSosmedStatusMessage.style.backgroundColor = 'rgba(244, 67, 54, 0.2)';
-                        allSosmedStatusMessage.style.color = '#f44336';
-                        allSosmedStatusMessage.innerText = `❌ Gagal: ${data.message || 'Terjadi kesalahan. Pastikan URL valid.'}`;
-                    }
-                } catch (error) {
-                    console.error('All Sosmed Download Error:', error);
-                    allSosmedStatusMessage.style.backgroundColor = 'rgba(244, 67, 54, 0.2)';
-                    allSosmedStatusMessage.style.color = '#f44336';
-                    allSosmedStatusMessage.innerText = '❌ Terjadi kesalahan saat menghubungi server.';
-                } finally {
-                    downloadAllSosmedBtn.disabled = false;
-                }
-            });
-        }
         
         // --- LOGIKA UPLOAD VIDEO TIKTOK KE CATBOX ---
         if (btnUploadToCatbox) {
